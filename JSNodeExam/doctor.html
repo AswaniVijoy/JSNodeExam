@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Booking Web App</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        li{
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Doctor Appointment Booking Web App</h1>
+    Patient Name : <input type="text" id="name"><br><br>
+    Doctor Name : <input type="text" id="dname"><br><br>
+    Appointment Date : <input type="text" id="date"><br><br>
+    Time : <input type="text" id="time"><br><br>
+    <button onclick="bookAppointment()">Book Appointment</button>
+    <!-- <table id="table"> -->
+    <ul id="tableList"></ul>
+    <p id="p"></p>
+
+    </table>
+
+    <script>
+        function bookAppointment(){
+            const pNameInput=document.getElementById('name')
+            const dNameInput=document.getElementById('dname')
+            const dateInput=document.getElementById('date').value
+            const timeInput=document.getElementById('time').value
+            const tableInput=document.getElementById('tableList')
+
+            const name=pNameInput.value.trim()
+            const dname=dNameInput.value.trim()
+            
+
+            const li1=document.createElement('li')
+            li1.textContent=name
+            const li2=document.createElement('li')
+            li2.textContent=dname
+            const li3=document.createElement('li')
+            li3.textContent=dateInput
+            const li4=document.createElement('li')
+            li4.textContent=timeInput
+
+            tableList.appendChild(li1)
+            tableList.appendChild(li2)
+            tableList.appendChild(li3)
+            tableList.appendChild(li4)
+            
+
+            const editButton=document.createElement('button')
+            editButton.textContent="Edit Appointment"
+            editButton.onclick=function(){
+
+            }
+            tableList.appendChild(editButton)
+
+            const cancelButton=document.createElement('button')
+            cancelButton.textContent="Cancel Appointment"
+            cancelButton.onclick=function(){
+            tableList.removeChild(li1)
+            tableList.removeChild(li2)
+            tableList.removeChild(li3)
+            tableList.removeChild(li4)
+            tableList.removeChild(editButton)
+            tableList.removeChild(cancelButton)
+
+            
+            
+            }
+            tableList.appendChild(cancelButton)
+
+
+            
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
